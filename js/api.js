@@ -109,6 +109,7 @@ function getAllTeams() {
 
   fetchAPI(ENDPOINT_COMPETITION)
     .then((data) => {
+      getLoaders()
       showTeams(data)
     })
     .catch((error) => {
@@ -223,6 +224,7 @@ function getSavedArticles() {
             </a>
             </div>
         `
+      document.getElementById('footballEmpty').style.display = "none";
       document.getElementById('footbalSaved').innerHTML += teamSquadHTML
     })
   })
@@ -271,4 +273,14 @@ let showNotifikasiDelete = () => {
   } else {
     console.error('FItur notifikasi tidak diijinkan.')
   }
+}
+
+
+const getLoaders = () => {
+  setTimeout(setLoader(), 3000)
+}
+
+const setLoader = () => {
+  document.getElementById("loaderContent").style.display = "none";
+  document.getElementById("teamFootball").style.display = "block";
 }
