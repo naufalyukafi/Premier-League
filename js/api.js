@@ -259,6 +259,7 @@ let getDeleteTeam = (id) => {
   showNotifikasiDelete()
   M.toast({ html: 'Anda berhasil menghapus team!' })
   console.log('klik delete')
+  window.location.reload()
 }
 
 let showNotifikasiDelete = () => {
